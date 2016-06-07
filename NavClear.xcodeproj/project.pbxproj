@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68171DFC1D06B24B00A74706 /* helpphoto_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68171DF91D06B24B00A74706 /* helpphoto_one@2x.png */; };
+		68171DFD1D06B24B00A74706 /* helpphoto_one640_1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68171DFA1D06B24B00A74706 /* helpphoto_one640_1136@2x.png */; };
+		68171DFE1D06B24B00A74706 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68171DFB1D06B24B00A74706 /* 1.png */; };
 		68A0692E1D06A1F00035503D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A0692D1D06A1F00035503D /* main.m */; };
 		68A069311D06A1F00035503D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A069301D06A1F00035503D /* AppDelegate.m */; };
 		68A069341D06A1F00035503D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A069331D06A1F00035503D /* ViewController.m */; };
 		68A0693C1D06A1F00035503D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A0693A1D06A1F00035503D /* LaunchScreen.storyboard */; };
 		68A069471D06A1F00035503D /* NavClearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A069461D06A1F00035503D /* NavClearTests.m */; };
 		68A069521D06A1F00035503D /* NavClearUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A069511D06A1F00035503D /* NavClearUITests.m */; };
-		68A069601D06A8A00035503D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A0695F1D06A8A00035503D /* 1.png */; };
-		68A069631D06ABEF0035503D /* helpphoto_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A069611D06ABEF0035503D /* helpphoto_one@2x.png */; };
-		68A069641D06ABEF0035503D /* helpphoto_one640_1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A069621D06ABEF0035503D /* helpphoto_one640_1136@2x.png */; };
 		68A069661D06AC960035503D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A069651D06AC960035503D /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68171DF91D06B24B00A74706 /* helpphoto_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpphoto_one@2x.png"; sourceTree = "<group>"; };
+		68171DFA1D06B24B00A74706 /* helpphoto_one640_1136@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpphoto_one640_1136@2x.png"; sourceTree = "<group>"; };
+		68171DFB1D06B24B00A74706 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		68A069291D06A1F00035503D /* NavClear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavClear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A0692D1D06A1F00035503D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68A0692F1D06A1F00035503D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,9 +54,6 @@
 		68A0694D1D06A1F00035503D /* NavClearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavClearUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A069511D06A1F00035503D /* NavClearUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavClearUITests.m; sourceTree = "<group>"; };
 		68A069531D06A1F00035503D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68A0695F1D06A8A00035503D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../1.png; sourceTree = "<group>"; };
-		68A069611D06ABEF0035503D /* helpphoto_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "helpphoto_one@2x.png"; path = "../../helpphoto_one@2x.png"; sourceTree = "<group>"; };
-		68A069621D06ABEF0035503D /* helpphoto_one640_1136@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "helpphoto_one640_1136@2x.png"; path = "../../helpphoto_one640_1136@2x.png"; sourceTree = "<group>"; };
 		68A069651D06AC960035503D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,9 +109,9 @@
 				68A069301D06A1F00035503D /* AppDelegate.m */,
 				68A069321D06A1F00035503D /* ViewController.h */,
 				68A069331D06A1F00035503D /* ViewController.m */,
-				68A0695F1D06A8A00035503D /* 1.png */,
-				68A069611D06ABEF0035503D /* helpphoto_one@2x.png */,
-				68A069621D06ABEF0035503D /* helpphoto_one640_1136@2x.png */,
+				68171DF91D06B24B00A74706 /* helpphoto_one@2x.png */,
+				68171DFA1D06B24B00A74706 /* helpphoto_one640_1136@2x.png */,
+				68171DFB1D06B24B00A74706 /* 1.png */,
 				68A0693A1D06A1F00035503D /* LaunchScreen.storyboard */,
 				68A0693D1D06A1F00035503D /* Info.plist */,
 				68A069651D06AC960035503D /* Images.xcassets */,
@@ -249,11 +249,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A069601D06A8A00035503D /* 1.png in Resources */,
+				68171DFE1D06B24B00A74706 /* 1.png in Resources */,
 				68A069661D06AC960035503D /* Images.xcassets in Resources */,
-				68A069631D06ABEF0035503D /* helpphoto_one@2x.png in Resources */,
-				68A069641D06ABEF0035503D /* helpphoto_one640_1136@2x.png in Resources */,
+				68171DFC1D06B24B00A74706 /* helpphoto_one@2x.png in Resources */,
 				68A0693C1D06A1F00035503D /* LaunchScreen.storyboard in Resources */,
+				68171DFD1D06B24B00A74706 /* helpphoto_one640_1136@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +500,7 @@
 				68A069581D06A1F00035503D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68A069591D06A1F00035503D /* Build configuration list for PBXNativeTarget "NavClearTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +509,7 @@
 				68A0695B1D06A1F00035503D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68A0695C1D06A1F00035503D /* Build configuration list for PBXNativeTarget "NavClearUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +518,7 @@
 				68A0695E1D06A1F00035503D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
