@@ -12,6 +12,9 @@
 {
     UIImageView *barImageView;
     UITableView *myTableView;
+    float _lastPosition;
+    float currentPostion;
+    float stopPosition;
 }
 @end
 
@@ -21,9 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor=[UIColor whiteColor];
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//                                                  forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+    //                                                  forBarMetrics:UIBarMetricsDefault];
+    //    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+    _lastPosition = 0;
+    stopPosition = 0;
+    
+    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"first"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
     self.navigationController.navigationBar.barTintColor=[UIColor orangeColor];
     
     self.title=@"This is my title!";
@@ -38,7 +48,7 @@
     myTableView.tableHeaderView=imageView;
     
     barImageView = self.navigationController.navigationBar.subviews.firstObject;
-    
+    NSString *str=@"122222";
 }
 #pragma mark - UITableViewDelaget
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,10 +70,67 @@
 }
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    barImageView.alpha=1-scrollView.contentOffset.y/400;
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    stopPosition = currentPostion + 64;
+    NSLog(@"滑动停止:%f",stopPosition);
+
+    
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+   
+    
+    currentPostion = scrollView.contentOffset.y;
+    
+    if (currentPostion > 0) {
+        if (currentPostion - _lastPosition >= 0) {
+            if ([[NSUserDefaults standardUserDefaults]objectForKey:@"first"]!=nil) {
+                [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"first"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+//                [NSObject cancelPreviousPerformRequestsWithTarget:self];
+//                [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.00001];
+                [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"second"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+                stopPosition = currentPostion + 64;
+
+            }
+           
+            
+            _lastPosition = currentPostion;
+            NSLog(@"ScrollUp now    current:%f    last:%f    stop:%f",currentPostion,_lastPosition,stopPosition);
+            
+            self.navigationController.navigationBar.alpha = 1 - currentPostion / 400;
+            
+            
+        }
+        else
+        {
+            if ([[NSUserDefaults standardUserDefaults]objectForKey:@"second"]!=nil) {
+                [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"second"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+//                [NSObject cancelPreviousPerformRequestsWithTarget:self];
+//                [self performSelector:@selector(scrollViewDidEndScrollingAnimation:) withObject:nil afterDelay:0.00001];
+                [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"first"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+                stopPosition = currentPostion + 64;
+
+            }
+            _lastPosition = currentPostion;
+            NSLog(@"ScrollDown now    current:%f   last:%f    stop:%f",currentPostion,_lastPosition,stopPosition);
+            
+            self.navigationController.navigationBar.alpha = (stopPosition - currentPostion)/200;
+            
+        }
+        
+    }
+    
+    
+    
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
