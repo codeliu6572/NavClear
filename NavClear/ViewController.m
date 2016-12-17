@@ -15,6 +15,7 @@
     float _lastPosition;
     float currentPostion;
     float stopPosition;
+    float lhAlpha;
 }
 @end
 
@@ -30,7 +31,7 @@
     
     _lastPosition = 0;
     stopPosition = 0;
-    
+    lhAlpha = 1;
     [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"first"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
@@ -53,7 +54,7 @@
 #pragma mark - UITableViewDelaget
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 40;
+    return 80;
 }
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -99,8 +100,16 @@
             
             _lastPosition = currentPostion;
             NSLog(@"ScrollUp now    current:%f    last:%f    stop:%f",currentPostion,_lastPosition,stopPosition);
-            
-            self.navigationController.navigationBar.alpha = 1 - currentPostion / 400;
+            if (lhAlpha >= 0) {
+                lhAlpha = lhAlpha - 0.025f;
+            }
+            else
+            {
+                lhAlpha = 0;
+            }
+            self.navigationController.navigationBar.alpha = lhAlpha;
+
+//            self.navigationController.navigationBar.alpha = 1 - currentPostion / 400;
             
             
         }
@@ -118,9 +127,15 @@
             }
             _lastPosition = currentPostion;
             NSLog(@"ScrollDown now    current:%f   last:%f    stop:%f",currentPostion,_lastPosition,stopPosition);
-            
-            self.navigationController.navigationBar.alpha = (stopPosition - currentPostion)/200;
-            
+            if (lhAlpha <= 1) {
+                lhAlpha = lhAlpha + 0.025f;
+            }
+            else
+            {
+                lhAlpha = 1;
+            }
+            self.navigationController.navigationBar.alpha = lhAlpha;
+            //            self.navigationController.navigationBar.alpha = (stopPosition - currentPostion)/200;
         }
         
     }
